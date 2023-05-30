@@ -1,0 +1,31 @@
+VAR
+    S : STRING ;
+    nb_word: INTEGER := 0;
+    nb_carac: INTEGER := 0;
+    nb_voy: INTEGER := 0;
+    c: CHAR;
+
+BEGIN
+    Write("Enter a sentence: ");
+    Read(S);
+
+    FOR c IN S DO
+        nb_carac := nb_carac + 1;
+
+        IF c = ' ' THEN
+            nb_word := nb_word + 1;
+        END_IF;
+
+        IF (c = 'a') OR (c = 'e') OR (c = 'u') OR (c = 'y') OR (c = 'i') THEN
+            nb_voy := nb_voy + 1;
+        END_IF;
+    END_FOR;
+
+    nb_carac := nb_carac + 1;
+    nb_word := nb_word + 1;
+
+    Write("The length of the sentence is: ", nb_carac);
+    Write("The number of words in the sentence is: ", nb_word);
+    Write("The number of vowels in the sentence is: ", nb_voy);
+
+END.
